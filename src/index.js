@@ -1,7 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
-import './destructuracion'
+
+// De la leccion de destructuracion
+// import './destructuracion'
 
 ReactDOM.render(
   <App />,

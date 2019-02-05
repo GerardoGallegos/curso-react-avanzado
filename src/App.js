@@ -1,37 +1,37 @@
 import React, { Component } from 'react'
+import './global.css'
 
-const Title = ({ uiColor, children }) => {
-  const styles = {
-    background: uiColor,
-    padding: '0.3em',
-    color: '#FFF',
-    borderRadius: '0.3em',
-    textAlign: 'center',
-    fontSize: '50px'
+class Parent extends Component {
+  render () {
+    const { children } = this.props
+
+    console.log(children)
+
+    return (
+      <div className='box'>
+        <div className='box blue'>
+          {/* { children }       */}
+        </div>
+  
+        <div className='box red'>
+          {/* { children } */}
+        </div>
+      </div>
+    )
   }
-
-  return (
-    <h1 style={styles}>
-      { children }
-    </h1>
-  )
 }
 
-
 class App extends Component {
-  state = {
-    uiColor: 'tomato'
-  }
-
   render () {
-    const { uiColor } = this.state
     return (
       <div>
-        <Title
-          uiColor={uiColor}
-        >
-          Super <em>Ninja</em>
-        </Title>
+        <Parent>
+          Hijo de texto
+          <div>Elementos</div>
+          { () => {} }
+          { 444 }
+          {`La suma es: ${ 5 + 5}`}
+        </Parent>
       </div>
     )
   }
