@@ -1,20 +1,20 @@
 import React, { Component } from 'react'
 import './global.css'
 
+// React.Children.map
+// React.Children.forEach
+// React.Children.toArray
+// React.Children.count
+// React.Children.only
+
 class Parent extends Component {
   render () {
     const { children } = this.props
 
-    console.log(children)
-
     return (
       <div className='box'>
         <div className='box blue'>
-          {/* { children }       */}
-        </div>
-  
-        <div className='box red'>
-          {/* { children } */}
+          { React.Children.only(children) }      
         </div>
       </div>
     )
@@ -26,11 +26,7 @@ class App extends Component {
     return (
       <div>
         <Parent>
-          Hijo de texto
-          <div>Elementos</div>
-          { () => {} }
-          { 444 }
-          {`La suma es: ${ 5 + 5}`}
+          <li>Otro</li>   
         </Parent>
       </div>
     )
